@@ -8,9 +8,27 @@ jobs:
    steps:
    - uses: actions/checkout@v2
    
+   - name: Docker login
+     env:
+      DOCKER_USER: ${{ secret.DOCKER_USERNAME }}
+      DOCKER_PASSWORD: ${{ secret.DOCKER_PASSWORD }}
+     run: |
+        docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD 
+  
    - name: docker build csharp
      run: |
        docker build ./c# -t aimvector/csharp:1.0.0
+       
    - name: checking docker images
      run: |
        docker images ls
+       
+   - name: docker build csharp
+     run: |
+      docker build ./c# -t aimvector/csharp:1.0.0  
+      
+   - name: docker push
+     run: |
+        docker push aimvector/csharp:1.0.0  
+       
+       
