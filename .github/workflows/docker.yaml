@@ -13,5 +13,17 @@ jobs:
     - name: docker login
       run: |
         sudo docker login -u praveendevops1337 -p 9ec686ffD@1
+    - name: docker build csharp
+      run: |
+        docker build ./c# -t praveendevops1337/csharp:1.0.0
+    - name: docker build nodejs
+      run: |
+        docker build ./nodejs -t praveendevops1337/nodejs:1.0.0
+    - name: docker push
+      run: |
+        docker push praveendevops1337/csharp:1.0.0
+        docker push praveendevops1337/nodejs:1.0.0     
+        
+        
         
    
