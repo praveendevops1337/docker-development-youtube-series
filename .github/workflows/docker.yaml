@@ -7,14 +7,12 @@ jobs:
    runs-on: ubuntu-latest
    steps:
    - uses: actions/checkout@v2
-   
    - name: Docker login
      env:
-       DOCKER_USERNAME: ${{ secret.DOCKER_USERNAME }}
-       DOCKER_PASSWORD: ${{ secret.DOCKER_PASSWORD }}
+       DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+       DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
    - run: |
         docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD 
-  
    - name: docker build csharp
      run: |
        docker build ./c# -t aimvector/csharp:1.0.0
@@ -35,3 +33,5 @@ jobs:
         docker push aimvector/csharp:1.0.0  
        
        
+
+  
