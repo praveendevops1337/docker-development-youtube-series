@@ -23,9 +23,6 @@ jobs:
     - name: docker build python
       run: |
         docker build ./python -t praveendevops1337/python:1.0.0
-    - name: docker build golang
-      run: |
-        docker build ./golang -t praveendevops1337/golang:1.0.0
         
     - name: docker images
       run: |  
@@ -33,7 +30,6 @@ jobs:
         
     - name: docker push
       run: |
-        docker push aimvector/csharp:1.0.0
-        docker push aimvector/nodejs:1.0.0
-        docker push aimvector/golang:1.0.0
-        docker push aimvector/python:1.0.0
+        docker push praveendevops1337/csharp:1.0.0
+        docker push praveendevops1337/nodejs:1.0.0
+        docker push praveendevops1337/python:1.0.0
