@@ -11,3 +11,6 @@ jobs:
    - name: docker build csharp
      run: |
        docker build ./c# -t aimvector/csharp:1.0.0
+   - name: checking docker images
+     run: |
+       docker images ls
