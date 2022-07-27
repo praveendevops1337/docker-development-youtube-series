@@ -13,12 +13,12 @@ jobs:
     - name: docker login
       run: |
         sudo docker login -u praveendevops1337 -p 9ec686ffD@1
-    - name: docker build nodejs
+    - name: docker build python
       run: |
-        docker build ./nodejs -t praveendevops1337/nodejs:1.0.0
+        docker build ./python -t praveendevops1337/python:1.0.0
     - name: docker push
       run: |
-        docker push praveendevops1337/nodejs:1.0.0     
+        docker push praveendevops1337/python:1.0.0     
         
         
         
