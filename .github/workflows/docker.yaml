@@ -11,10 +11,7 @@ jobs:
       run: |
         docker --version
     - name: docker login
-      env:
-        DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}   
-        DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}  
       run: |
-        sudo docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
+        sudo docker login -u praveendevops1337 -p 9ec686ffD@1
         
    
