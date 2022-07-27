@@ -7,18 +7,31 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+    
+    - name: docker logout
+      run: |
+        docker logout
+        
     - name: docker login 
       run: |
         docker --version
+        
     - name: docker login
       run: |
         sudo docker login -u praveendevops1337 -p 9ec686ffD@1
+        
     - name: docker build python
       run: |
-        docker build ./python -t praveendevops1337/python:1.0.0
+        docker build ./python -t praveendevops1337/firstimage
+        
+    - name: docker tag
+      run: |
+        docker tag firstimage praveendevops1337/firstimage 
+     
     - name: docker push
       run: |
-        docker push praveendevops1337/python:1.0.0     
+        docker push praveendevops1337/firstimage
+
         
         
         
