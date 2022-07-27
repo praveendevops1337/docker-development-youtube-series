@@ -20,17 +20,11 @@ jobs:
       run: |
         sudo docker login -u praveendevops1337 -p 9ec686ffD@1
         
-    - name: docker build python
+    - name: docker image search
       run: |
-        docker build ./python -t praveendevops1337/firstimage
+        docker images  
         
-    - name: docker tag
-      run: |
-        docker tag firstimage praveendevops1337/firstimage 
-     
-    - name: docker push
-      run: |
-        docker push praveendevops1337/firstimage
+    
 
         
         
