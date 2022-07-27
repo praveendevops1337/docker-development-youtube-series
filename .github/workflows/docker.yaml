@@ -10,7 +10,7 @@ jobs:
    
    - name: Docker login
      env:
-      DOCKER_USER: ${{ secret.DOCKER_USERNAME }}
+      DOCKER_USERNAME: ${{ secret.DOCKER_USERNAME }}
       DOCKER_PASSWORD: ${{ secret.DOCKER_PASSWORD }}
      run: |
         docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD 
@@ -26,6 +26,10 @@ jobs:
    - name: docker build csharp
      run: |
       docker build ./c# -t aimvector/csharp:1.0.0  
+    
+   - name: checking docker images
+     run: |
+       docker images ls
       
    - name: docker push
      run: |
