@@ -8,7 +8,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       
-    - name: aws ecr login
+    - name: checking aws
       run: |
-        aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 602973582123.dkr.ecr.ap-south-1.amazonaws.com
-        
+        aws --version
