@@ -33,9 +33,9 @@ jobs:
         
     - name: docker Tag
       run: |
-        docker tag myfristecr/csharp1:latest 602973582123.dkr.ecr.ap-south-1.amazonaws.com/myfristecr/csharp1:latest  
+        docker tag myfristecr/csharp1 602973582123.dkr.ecr.ap-south-1.amazonaws.com/myfristecr/csharp1
         
     - name: push to ECR
       run: |
-        docker push 602973582123.dkr.ecr.ap-south-1.amazonaws.com/myfristecr/csharp1:latest   
+        docker push 602973582123.dkr.ecr.ap-south-1.amazonaws.com/myfristecr/csharp1 
         
