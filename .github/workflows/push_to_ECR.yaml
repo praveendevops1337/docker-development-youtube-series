@@ -11,6 +11,11 @@ jobs:
     - name: docker logout
       run: |  
         docker logout
+        
+    - name: aws configure
+      run: |  
+        aws configure   
+      
     - name: aws ecr login
       run: |
         aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 602973582123.dkr.ecr.ap-south-1.amazonaws.com
