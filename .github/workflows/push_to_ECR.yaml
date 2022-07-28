@@ -11,3 +11,4 @@ jobs:
     - name: checking aws
       run: |
         aws --version
+        aws logout
