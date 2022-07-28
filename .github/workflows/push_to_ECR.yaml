@@ -11,4 +11,9 @@ jobs:
     - name: checking aws
       run: |
         aws --version
-        aws logout
+        
+    - name: Configure AWS Credentials
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        role-to-assume: arn:aws:iam::602973582123:user/IAM_FULLACCESS
+        aws-region: ap-south-1
