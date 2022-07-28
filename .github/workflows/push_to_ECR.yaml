@@ -1,0 +1,17 @@
+name: Docker Series Builds
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: docker logout
+      run: |  
+        docker logout
+    - name: aws ecr login
+      run: |
+        aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 602973582123.dkr.ecr.ap-south-1.amazonaws.com
+        
