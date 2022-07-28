@@ -14,7 +14,9 @@ jobs:
         
     - name: aws configure
       run: |  
-        aws configure   
+        aws configure
+        AWS_ACCESS_KEY_ID: ${{  secrets.ACCESS_KEY_ID  }}
+        AWS_SECRET_KEY_ID: ${{ secrets.SECRET_KEY }}
       
     - name: aws ecr login
       run: |
