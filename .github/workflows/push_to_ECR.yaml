@@ -38,5 +38,10 @@ jobs:
         
     - name: push to ECR
       run: |
+        env:
+        AWS_DEFAULT_REGION: ap-south-1
+        AWS_REGION: ap-south-1
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         docker push 602973582123.dkr.ecr.ap-south-1.amazonaws.com/myfristecr/csharp1:latest
         
