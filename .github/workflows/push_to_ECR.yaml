@@ -22,3 +22,12 @@ jobs:
     -  name: ECR LOGIN
        run: |
         aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 602973582123.dkr.ecr.ap-south-1.amazonaws.com
+   
+    - name: docker build csharp
+      run: |
+        docker build ./c# -t myfristecr/csharp1:1.0.0
+        
+    - name: docker IMAGES
+      run: |
+        docker images
+        
