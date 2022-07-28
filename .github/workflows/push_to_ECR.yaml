@@ -7,16 +7,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    
-    - name: docker logout
-      run: |  
-        docker logout
-        
-    - name: aws configure
-      run: |  
-        aws configure
-        AKIAYYZAGWMVV5B6WW72
-        tJ+ehtvcQmTex/zN0h/EvlNz1xXPEzKVrE4y7Tzs
       
     - name: aws ecr login
       run: |
